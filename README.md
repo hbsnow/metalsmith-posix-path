@@ -1,5 +1,7 @@
 # metalsmith-posix-path
 
+[![Build Status](https://travis-ci.org/hbsnow/metalsmith-posix-path.svg?branch=master)](https://travis-ci.org/hbsnow/metalsmith-posix-path)
+
 Metalsmith plugin that add posix path.
 
 ## Installation
