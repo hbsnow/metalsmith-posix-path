@@ -1,0 +1,20 @@
+{
+  "name": "metalsmith-posix-path",
+  "description": "Metalsmith plugin that add posix path.",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "repository": "https://github.com/hbsnow/metalsmith-posix-path.git",
+  "author": "hbsnow",
+  "license": "MIT",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "metalsmith": "^2.3.0",
+    "mocha": "^3.4.2"
+  },
+  "dependencies": {
+    "normalize-path": "^2.1.1"
+  }
+}
