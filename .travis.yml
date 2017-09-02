@@ -1,23 +1,16 @@
 language: node_js
-
-node_js:
-  - 'stable'
-  - 'lts/*'
-
 cache:
   directories:
     - node_modules
-
+notifications:
+  email: false
+node_js:
+  - 'stable'
+  - 'lts/*'
+before_script:
+  - npm prune
 after_success:
-  - npm install semantic-release
-
-deploy:
-  skip_cleanup: true
-  provider: script
-  script: semantic-release pre && npm publish && semantic-release post || true
-  on:
-    branch: master
-
+  - npm run semantic-release
 branches:
   only:
-  - master
+    - master
