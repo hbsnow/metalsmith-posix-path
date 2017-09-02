@@ -83,4 +83,49 @@ describe('metalsmith-posix-path', function () {
         done()
       })
   })
+
+  it('ファイル名を書き換える', function (done) {
+    var metalsmith = Metalsmith('test/fixtures/rename')
+    metalsmith
+      .use(posixPath({ rename: 'test2.html' }))
+      .build(function (err, files) {
+        if (err) return done(err)
+
+        const keys = Object.keys(files)
+        assert.equal(keys.length, 1)
+        keys.forEach(function (file) {
+          switch (files[file].title) {
+            case 'index':
+              assert.equal(files[file].posixPath, 'test2.html')
+              break
+          }
+        })
+        done()
+      })
+  })
+
+  it('拡張子を書き換えて接頭尾を追加する', function (done) {
+    var metalsmith = Metalsmith('test/fixtures/rename-ext')
+    metalsmith
+      .use(posixPath({
+        rename: {
+          suffix: '-suffix',
+          extname: '.html'
+        }
+      }))
+      .build(function (err, files) {
+        if (err) return done(err)
+
+        const keys = Object.keys(files)
+        assert.equal(keys.length, 1)
+        keys.forEach(function (file) {
+          switch (files[file].title) {
+            case 'index':
+              assert.equal(files[file].posixPath, 'test-suffix.html')
+              break
+          }
+        })
+        done()
+      })
+  })
 })
