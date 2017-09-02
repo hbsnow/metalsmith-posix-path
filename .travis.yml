@@ -4,15 +4,19 @@ node_js:
   - 'stable'
   - 'lts/*'
 
-cache: yarn
+cache:
+  directories:
+    - node_modules
 
 after_success:
-  - yarn i semantic-release
+  - npm install semantic-release
 
 deploy:
   skip_cleanup: true
   provider: script
   script: semantic-release pre && npm publish && semantic-release post || true
+  on:
+    branch: master
 
 branches:
   only:
