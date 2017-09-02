@@ -1,9 +1,19 @@
 language: node_js
+
 node_js:
   - 'stable'
   - 'lts/*'
+
 cache: yarn
+
+after_success:
+  - yarn i semantic-release
+
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: semantic-release pre && npm publish && semantic-release post || true
+
 branches:
   only:
   - master
-  - release
