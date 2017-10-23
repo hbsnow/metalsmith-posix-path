@@ -27,13 +27,13 @@ Metalsmith(__dirname)
 
 ## Options
 
-|    name    |            description            |        default         |
-| ---------- | --------------------------------- | ---------------------- |
-| `property` | property name for metadata        | `'posixPath'`          |
-| `omit`     | delete filename if it's `index.*` | `true`                 |
-| `rename`   | rename file; see also [rename][]  | `String` or `[Object]` |
+|    name    |            description            |    default    |         type         |
+| ---------- | --------------------------------- | ------------- | -------------------- |
+| `property` | property name for metadata        | `'posixPath'` | `string` or `array`  |
+| `omit`     | delete filename if it's `index.*` | `true`        | `boolean`            |
+| `rename`   | rename file                       | `{}`          | `string` or `object` |
 
-[rename]: (https://github.com/popomore/rename) "rename"
+rename: see also [rename](https://github.com/popomore/rename)
 
 ## License
 
