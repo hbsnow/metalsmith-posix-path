@@ -1,6 +1,7 @@
 {
   "name": "metalsmith-posix-path",
   "description": "Metalsmith plugin that add posix path.",
+  "version": "0.0.0-placeholder",
   "main": "lib/index.js",
   "repository": "https://github.com/hbsnow/metalsmith-posix-path.git",
   "author": "hbsnow",
@@ -18,5 +19,9 @@
   "dependencies": {
     "normalize-path": "^2.1.1",
     "rename": "^1.0.4"
+  },
+  "engines": {
+    "node": ">=6",
+    "npm": ">=2"
   }
 }
