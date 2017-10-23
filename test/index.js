@@ -128,4 +128,27 @@ describe('metalsmith-posix-path', function () {
         done()
       })
   })
+
+  it('複数のメタデータを追加する', function (done) {
+    var metalsmith = Metalsmith('test/fixtures/multi-metadata')
+    metalsmith
+      .use(posixPath({
+        property: ['posixPath', 'testPath']
+      }))
+      .build(function (err, files) {
+        if (err) return done(err)
+
+        const keys = Object.keys(files)
+        assert.equal(keys.length, 1)
+        keys.forEach(function (file) {
+          switch (files[file].title) {
+            case 'index':
+              assert.equal(files[file].posixPath, 'test.html')
+              assert.equal(files[file].testPath, 'test.html')
+              break
+          }
+        })
+        done()
+      })
+  })
 })
