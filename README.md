@@ -18,6 +18,7 @@ var posixPath = require('metalsmith-posix-path')
 
 Metalsmith(__dirname)
   .use(posixPath({
+    property：['path', 'canonical'],
     rename: {
       extname: '.html'
     }
