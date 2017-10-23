@@ -34,7 +34,7 @@ Metalsmith(__dirname)
 | `omit`     | delete filename if it's `index.*` | `true`        | `boolean`            |
 | `rename`   | rename file                       | `{}`          | `string` or `object` |
 
-rename: see also [rename](https://github.com/popomore/rename)
+rename: https://github.com/popomore/rename
 
 ## License
 

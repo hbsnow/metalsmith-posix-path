@@ -1,22 +1,17 @@
 language: node_js
-
 cache:
   directories:
-    - node_modules
-
+    - ~/.npm
 notifications:
   email: false
-
 node_js:
-  - 'stable'
-  - 'lts/*'
-
+  - '8'
+  - '6'
+  - '4'
+before_script:
+  - npm prune
 after_success:
   - npm run semantic-release
-
-install:
-  - npm install
-
 branches:
-  only:
-    - master
+  except:
+    - /^v\d+\.\d+\.\d+$/
